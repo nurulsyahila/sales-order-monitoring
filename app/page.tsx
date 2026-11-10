@@ -1,0 +1,22 @@
+import Image from "next/image";                                                                                                                                           // Next.js image tool (loads and sizes the logo)
+import OrdersDashboard from "@/components/OrdersDashboard";                                                                                                               // our dashboard component (cards, filters, table)
+
+export default function Home() {                                                                                                                                          // the home page of the app (shown at the "/" address)
+  return (                                                                                                                                                                // send back the HTML structure of the page
+    <div className="min-h-screen bg-white bg-[image:radial-gradient(ellipse_70%_320px_at_50%_0%,#d9e8ff,#ffffff)]">{                                                      /* outer box: white page, with a soft blue glow from the top center that fades to white */}
+      <header className="px-4 py-8 text-center sm:py-10">{                                                                                                                /* header area: side padding, same space above and below, text centered */}
+        <p className="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#0A50A3]">{                                               /* company line: logo and name side by side, centered, small bold uppercase, brand blue */}
+          <Image src="/logo.png" alt="Harrisons logo" width={16} height={16} className="h-4 w-auto" />{                                                                   /* the logo from the public folder, 16 px high (same as the text line height) */}
+          Harrisons Sabah Sdn Bhd{                                                                                                                                        /* the company name */}
+        </p>{                                                                                                                                                             /* end of the company line */}
+        <h1 className="mt-1 text-xl font-bold text-[#092033] sm:text-2xl">Sales Order Monitoring</h1>{                                                                    /* main title: bold, dark navy, small gap above, bigger on wide screens */}
+      </header>{                                                                                                                                                          /* end of the header */}
+
+      <main className="mx-auto max-w-6xl px-4 pb-4 pt-0 sm:px-6 sm:pb-6">{                                                                                                /* main area: centered, limited width, no top space so the header spacing stays equal */}
+        <div className="rounded-2xl border border-slate-200 bg-white px-4 sm:px-8">{                                                                                      /* the frame: white box with a thin border and rounded corners */}
+          <OrdersDashboard />{                                                                                                                                            /* show the dashboard (cards, filters, table) inside the frame */}
+        </div>{                                                                                                                                                           /* end of the frame */}
+      </main>{                                                                                                                                                            /* end of the main area */}
+    </div>                                                                                                                                                                // end of the outer box
+  );                                                                                                                                                                      // end of the return
+}                                                                                                                                                                         // end of the Home function

@@ -1,0 +1,18 @@
+@import "tailwindcss";                                      /* load all of Tailwind styles into the project */
+@custom-variant dark (&:where(.dark, .dark *));             /* dark: classes work only inside a ".dark" element, which we never add, so dark mode is off */
+
+:root {                                                     /* top-level element, so these values are available everywhere */
+  --background: #ffffff;                                  /* page background color: white */
+  --foreground: #092033;                                  /* text color: dark navy (my hand conversion, may be slightly off) */
+  color-scheme: light;                                      /* tell the browser this is a light page */
+}                                                           /* end of :root */
+
+@theme inline {                                             /* tell Tailwind about our own design values */
+  --font-sans: var(--font-lexend), "Segoe UI", sans-serif;  /* default font: Lexend first, then fallbacks */
+}                                                           /* end of @theme */
+
+body {                                                      /* styles for the whole page body */
+  background: var(--background);                            /* use the white background from :root */
+  color: var(--foreground);                                 /* use the navy text color from :root */
+  font-family: var(--font-lexend), "Segoe UI", sans-serif;  /* use Lexend, with the same fallback fonts */
+}                                                           /* end of body */
