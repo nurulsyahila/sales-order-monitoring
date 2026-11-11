@@ -2,7 +2,7 @@
 
 A web app for sales order monitoring. Built for the Harrisons Sabah Sdn Bhd, IT Executive assessment.
 
-**Live app:** [your Vercel URL]
+**Live app:** https://sales-order-monitoring.vercel.app/
 
 ## Features
 - Dashboard cards: total orders, open / pending, completed (invoiced + delivered), cancelled, total order value
